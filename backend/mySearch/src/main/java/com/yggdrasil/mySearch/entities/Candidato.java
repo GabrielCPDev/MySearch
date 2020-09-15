@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yggdrasil.mySearch.entities.enums.Partido;
 
 @Entity
@@ -19,6 +20,7 @@ public class Candidato implements Serializable {
 	private Long id;
 	private String name;
 	private Partido partido;
+	@JsonIgnore
 	@ManyToOne
 	private Chapa chapa;
 	

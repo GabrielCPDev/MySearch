@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Chapa implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -24,6 +26,7 @@ public class Chapa implements Serializable {
 	@OneToOne
 	private Candidato vicePrefeito;
 	
+	@JsonIgnore	
 	@OneToMany(mappedBy = "voto")
 	private List<Registro> votos = new ArrayList<Registro>();
 	
